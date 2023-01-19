@@ -1,9 +1,8 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 
-
 import { NavLink } from 'react-router-dom';
-import '../styles/navBar.css'
+import '../styles/navBar.css';
 
 const Navbar = () => {
   const links = [
@@ -32,9 +31,9 @@ const Navbar = () => {
         ))}
 
       </ul>
-      <button className='icon-button' type='button'>
-      <span className='user'>user</span>
-      </button>  
+      <button className="icon-button" type="button">
+        <span className="user">user</span>
+      </button>
 
     </nav>
   );
