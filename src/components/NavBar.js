@@ -1,6 +1,4 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
-
 import { NavLink } from 'react-router-dom';
 import '../styles/navBar.css';
 
