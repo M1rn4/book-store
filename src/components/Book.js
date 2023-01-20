@@ -1,20 +1,15 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Book extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // eslint-disable-next-line react/prop-types
       genre: props.genre,
-      // eslint-disable-next-line react/prop-types
       title: props.title,
-      // eslint-disable-next-line react/prop-types
       author: props.author,
-      // eslint-disable-next-line react/no-unused-state
-      comments: [],
       progress: 0,
       currentChapter: 1,
     };
@@ -37,47 +32,54 @@ class Book extends Component {
   }
 
   render() {
+    const {
+      genre, title, author, progress, currentChapter,
+    } = this.state;
     return (
       <div className="book-container">
         <div>
           <div>
             <p>
               Genre:
-              {this.state.genre}
+              {genre}
             </p>
             <p>
               Title:
-              {this.state.title}
+              {title}
             </p>
             <p>
               Author:
-              {this.state.author}
+              {author}
             </p>
           </div>
           <ul>
-            <li><a href="#" onClick={this.handleComment}>Comment</a></li>
-            <li><a href="#" onClick={this.handleRemove}>Remove</a></li>
-            <li>
-              <a href="#" onClick={this.handleEdit}>Edit</a>
-            </li>
+            <li><Link to="/#">Comment</Link></li>
+            <li><Link to="/#">Remove</Link></li>
+            <li><Link to="/#">Edit</Link></li>
           </ul>
         </div>
         <div className="donut-chart-container">
           <p>
-            {this.state.progress}
+            {progress}
             %
           </p>
         </div>
         <div>
           <p>
             Current chapter:
-            {this.state.currentChapter}
+            {currentChapter}
           </p>
-          <button onClick={this.handleLoad}>Load Progress</button>
+          <button onClick={this.handleLoad} type="button">Load Progress</button>
         </div>
       </div>
     );
   }
 }
+
+Book.propTypes = {
+  genre: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
 
 export default Book;
