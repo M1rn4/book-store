@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/button-has-type */
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 
 const InputBook = ({ handleSubmit, handleChange, bookTitle }) => (
   <form onSubmit={handleSubmit} className="form-container">
@@ -12,8 +12,14 @@ const InputBook = ({ handleSubmit, handleChange, bookTitle }) => (
       name="bookTitle"
       onChange={handleChange}
     />
-    <button className="input-submit">Add Book</button>
+    <button className="input-submit" type="button">Add Book</button>
   </form>
 );
+
+InputBook.propTypes = {
+  handleSubmit: PropTypes.string.isRequired,
+  handleChange: PropTypes.string.isRequired,
+  bookTitle: PropTypes.string.isRequired,
+};
 
 export default InputBook;

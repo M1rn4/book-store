@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 
 class ListBox extends Component {
@@ -16,9 +15,10 @@ class ListBox extends Component {
   };
 
   render() {
+    const { selected } = this.state;
     return (
       <div className="listbox-container">
-        <select onChange={this.handleChange} value={this.state.selected}>
+        <select onChange={this.handleChange} value={selected}>
           <option value="" disabled>Select a genre</option>
           <option value="action">Action</option>
           <option value="science-fiction">Science fiction</option>
