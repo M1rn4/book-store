@@ -6,13 +6,7 @@ import { Link } from 'react-router-dom';
 class Book extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      genre: props.genre,
-      title: props.title,
-      author: props.author,
-      progress: 0,
-      currentChapter: 1,
-    };
+    this.state = {};
   }
 
   handleComment = () => {
@@ -34,7 +28,7 @@ class Book extends Component {
   render() {
     const {
       genre, title, author, progress, currentChapter,
-    } = this.state;
+    } = this.props;
     return (
       <div className="book-container">
         <div>
@@ -60,6 +54,7 @@ class Book extends Component {
         </div>
         <div className="donut-chart-container">
           <p>
+            progress:
             {progress}
             %
           </p>
@@ -80,6 +75,8 @@ Book.propTypes = {
   genre: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
+  currentChapter: PropTypes.number.isRequired,
 };
 
 export default Book;
