@@ -1,17 +1,17 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
-import Categories from './components/Categories';
-import Books from './components/Books';
+import Books from './Pages/Books';
+import Categories from './Pages/Categories';
 
 const App = () => (
-  <>
+  <Router>
     <Navbar />
     <Routes>
       <Route path="/" element={<Books />} />
       <Route path="/categories" element={<Categories />} />
     </Routes>
-  </>
+  </Router>
 );
 
 export default App;
