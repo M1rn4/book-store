@@ -1,7 +1,17 @@
 const ADD_BOOK = 'Bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'Bookstore/books/REMOVE_BOOK';
 
-const initialState = [];
+const initialState = [{
+  id: '1',
+  title: 'Romeo and Juliet',
+  author: 'William Shakeaspeare',
+},
+{
+  id: '2',
+  title: 'La vida es sueño',
+  author: 'Calderon de la Barca',
+},
+];
 
 // Actions
 
