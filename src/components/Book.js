@@ -1,24 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
 
-const Book = ({ id, title, author }) => {
-  const dispatch = useDispatch();
-  return (
-    <div>
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
-    </div>
-  );
-};
+const Book = ({ title, author, category }) => (
+  <div>
+    <h2>{title}</h2>
+    <h3>{author}</h3>
+    <p>{category}</p>
+  </div>
+);
 
 Book.propTypes = {
-  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;
