@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/navBar.css';
 
 const Navbar = () => {
   const links = [
@@ -14,20 +15,25 @@ const Navbar = () => {
       text: 'Categories',
     },
   ];
+
   return (
-    <nav>
-      <h1>Bookstore CMS</h1>
+    <nav className="navBar">
+      <h1>BookStore CMS</h1>
       <ul>
         {links.map((link) => (
           <li key={link.id}>
-            <NavLink to={link.path}>
+            <NavLink to={link.path} className={({ isActive }) => (isActive ? 'activelink' : undefined)}>
               {link.text}
             </NavLink>
           </li>
         ))}
+
       </ul>
+      <button className="avatar" type="button">
+        <span className="user">user</span>
+      </button>
+
     </nav>
   );
 };
-
 export default Navbar;
