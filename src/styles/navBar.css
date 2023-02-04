@@ -1,34 +1,59 @@
-nav {
-  padding: 20px 30px;
+header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 15px 100px;
+  background-color: #fff;
+  letter-spacing: 1.9px;
+}
+
+nav {
+  display: flex;
+  gap: 48px;
   background-color: white;
+  height: 7rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 nav h1 {
-  font-size: 1.5rem;
-  color: blue;
+  color: #0290ff;
+  font-weight: bold;
+  font-size: 1.875rem;
 }
 
 nav ul {
-  padding: 0 20px;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: space-around;
-  align-items: center;
   list-style: none;
+  display: flex;
+  gap: 48px;
+  align-items: center;
 }
 
-nav ul li {
-  font-size: 1.2rem;
+a {
+  text-decoration: none;
+  color: #121212;
+  opacity: 0.5;
 }
 
-nav ul li a {
-  color: black;
+.avatar {
+  color: #0290ff;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button span {
-  height: 2rem;
-  width: 2rem;
+.avatar svg {
+  width: 24px;
+  height: 24px;
+}
+
+.activelink {
+  color: #121212;
+  opacity: 1;
 }
